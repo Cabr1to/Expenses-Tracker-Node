@@ -2,6 +2,7 @@ import React  from 'react';
 import styled from "styled-components";
 import {MainLayout} from "./styles/Layouts";
 import Orb from "./Components/Orb/Orb";
+import Navigation from "./Components/Navigation/Navigation";
 // import bg from '.img/bg.png'
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
     <AppStyled className="App">
         <Orb/>
       <MainLayout>
-
+        <Navigation />
       </MainLayout>
     </AppStyled>
   );
