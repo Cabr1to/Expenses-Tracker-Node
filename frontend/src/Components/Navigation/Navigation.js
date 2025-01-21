@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import {menuItems} from "../../utils/menuItems";
 import {signout} from "../../utils/Icons";
-// import avatar from '../../img/avatar.png'
+import avatar from '../../img/avatar.png'
 
 
 
@@ -11,7 +11,7 @@ function Navigation() {
     return (
         <NavStyled>
             <div className="user">
-           <!-- <img src={avatar} alt="" /> !-->
+            <img src={avatar} alt="" />
                 <div className="text">
                     <h2>Edu</h2>
                     <p>Your money</p>
@@ -19,13 +19,11 @@ function Navigation() {
             </div>
             <ul className="menu-itens">
                 {menuItems.map((item, i) => {
-                    return (<li>
-                        key={item.id}
-                    >
+                    return <li>
                         {item.icon}
-                        <span>{item.title}</span>
+                        <span>{item.title} </span>
 
-                    </li>)
+                    </li>
                 })}
             </ul>
             <div className="bottom-nav">
