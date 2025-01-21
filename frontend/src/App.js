@@ -1,14 +1,16 @@
 import React  from 'react';
 import styled from "styled-components";
 import {MainLayout} from "./styles/Layouts";
+import Orb from "./Components/Orb/Orb";
 // import bg from '.img/bg.png'
 
 function App() {
   return (
 //  <AppStyled bg={bg} className="App">
     <AppStyled className="App">
+        <Orb/>
       <MainLayout>
-      <h1>Hello</h1>
+
       </MainLayout>
     </AppStyled>
   );
