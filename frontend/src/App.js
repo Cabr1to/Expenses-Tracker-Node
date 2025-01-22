@@ -4,20 +4,36 @@ import {MainLayout} from "./styles/Layouts";
 import Orb from "./Components/Orb/Orb";
 import Navigation from "./Components/Navigation/Navigation";
  import bg from './img/bg.jpg'
+import Dashboard from "./Components/Dashboard/Dashboard";
+import Incomes from "./Components/Incomes/Incomes";
+import Expenses from "./Components/Expenses/Expenses";
+import {useGlobalContext} from "./context/globalContext";
 
 
 function App() {
   const[active, setActive] = React.useState(1);
 
+  const global = useGlobalContext()
+    console.log(global)
+
   const displayData = () => {
       switch (active) {
           case 1:
-              <Dashboard/>
+              return <Dashboard />
+          case 2:
+              return <Dashboard />
+          case 3:
+              return <Incomes />
+          case 4:
+              return <Expenses />
+
+          default:
+              return <Expenses />
       }
   }
 
   const orbMemo = useMemo(() => {
-        return <Orb  />;
+        return <Orb />;
   }, [])
 
   return (
