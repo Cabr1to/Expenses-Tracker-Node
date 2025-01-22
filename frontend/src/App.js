@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {MainLayout} from "./styles/Layouts";
 import Orb from "./Components/Orb/Orb";
 import Navigation from "./Components/Navigation/Navigation";
- import bg from './img/bg.jpg'
+import bg from './img/bg.jpg'
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Incomes from "./Components/Incomes/Incomes";
 import Expenses from "./Components/Expenses/Expenses";
@@ -42,7 +42,7 @@ function App() {
       <MainLayout>
         <Navigation active={active} setActive={setActive} />
           <main>
-              {displayData}
+              {displayData()}
           </main>
       </MainLayout>
     </AppStyled>
