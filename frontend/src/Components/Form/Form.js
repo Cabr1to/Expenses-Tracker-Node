@@ -3,6 +3,8 @@ import styled from "styled-components";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css"
 import {useGlobalContext} from "../../context/globalContext";
+import Button from "../Button/Button";
+import {plus} from "../../utils/Icons";
 
 
 function Form() {
@@ -23,7 +25,7 @@ function Form() {
 
     const handleSubmit = event => {
         event.preventDefault()
-        addIncome({inputState})
+        addIncome(inputState)
     }
 
     return (
@@ -87,7 +89,14 @@ function Form() {
             </div>
 
             <div className="submit-btn">
-                <button>Add Income</button>
+                <Button
+                    name={'Add Income'}
+                    icon={plus}
+                    bPad={'.8rem 1.6rem'}
+                    bRad={'30px'}
+                    bg={'var(--color-accent'}
+                    color={'#fff'}
+                />
             </div>
 
         </FormStyled>
