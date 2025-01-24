@@ -29,7 +29,7 @@ function Incomes() {
                                 description={description}
                                 amount={amount} date={date}
                                 category={category}
-                                indicatorColor={}
+                                indicatorColor="var(--color-green)"
                             />
                         })}
                     </div>
@@ -41,6 +41,13 @@ function Incomes() {
 const IncomesStyled = styled.div`
     display: flex;
     overflow: auto;
+    .income-content{
+        display: flex;
+        gap: 2rem;
+        .incomes{
+            flex: 1;
+        }
+    }
 `;
 
 export default Incomes;
