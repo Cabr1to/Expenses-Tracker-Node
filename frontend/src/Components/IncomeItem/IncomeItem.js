@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {calender, comment, dollar, trash} from "../../utils/Icons";
+import {calender, comment, dollar, freelance, money, trash} from "../../utils/Icons";
 import Button from "../Button/Button";
 
 
@@ -14,9 +14,19 @@ function IncomeItem({
     deleteItem,
     indicatorColor,
     type
-                    }) {
-    return (
+}) {
+    const categoryIcon = () => {
+        switch(category){
+            case 'salary':
+                return money;
+            case 'sidehustles':
+                return freelance
+            case 'investiments':
+                return inv
+        }
+    }
 
+    return (
         <IncomeItemStyled indicator={indicatorColor}>
             <div className="icon">
 
