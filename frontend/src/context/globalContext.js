@@ -1,17 +1,17 @@
-import React, {useContext} from "react";
+import React, {createContext, useContext, useState} from "react";
 import axios from "axios";
 
-const BASE_URL = "http://localhost:5000/api/v1";
+const BASE_URL = "http://localhost:5001/api/v1/";
 
-const GlobalContext = React.createContext();
+const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
-    const [incomes, setIncomes] = React.useState([]);
-    const [expenses, setExpenses] = React.useState([]);
-    const [error, setError] = React.useState(null);
+    const [incomes, setIncomes] = useState([]);
+    const [expenses, setExpenses] =useState([]);
+    const [error, setError] = useState(null);
 
     const addIncome = async (income) => {
-        const response = await axios.post(`${BASE_URL}/add-incomes`)
+        const response = await axios.post(`${BASE_URL}add-income`, income)
             .catch((err) => {
                 setError(err.response.data.message);
             })
@@ -20,7 +20,7 @@ export const GlobalProvider = ({ children }) => {
 
     return (
         <GlobalContext.Provider value={{
-            addIncome,
+            addIncome
         }}>
             {children}
         </GlobalContext.Provider>
@@ -28,5 +28,5 @@ export const GlobalProvider = ({ children }) => {
 }
 
 export const useGlobalContext = () => {
-    return useContext(GlobalContext);
+    return useContext(GlobalContext)
 }

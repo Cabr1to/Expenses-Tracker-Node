@@ -20,7 +20,7 @@ function Navigation({active, setActive}) {
             <ul className="menu-itens">
                 {menuItems.map((item, i) => {
                     return <li
-                        key={item.i}
+                        key={item.id}
                         onClick={() => setActive(item.id)}
                         className={ active === item.id ? 'active' : ''}
                     >
