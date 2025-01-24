@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {calender, comment, dollar, freelance, money, trash} from "../../utils/Icons";
+import {calender, card, comment, cripto, dollar, freelance, money, stocks, trash} from "../../utils/Icons";
 import Button from "../Button/Button";
 
 
@@ -20,9 +20,13 @@ function IncomeItem({
             case 'salary':
                 return money;
             case 'sidehustles':
-                return freelance
+                return freelance;
             case 'investiments':
-                return inv
+                return stocks;
+            case 'cripto':
+                return cripto;
+            case 'bank':
+                return card;
         }
     }
 
