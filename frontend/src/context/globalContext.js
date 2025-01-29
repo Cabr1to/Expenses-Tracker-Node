@@ -6,6 +6,7 @@ const BASE_URL = "http://localhost:5001/api/v1/";
 const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
+
     const [incomes, setIncomes] = useState([]);
     const [expenses, setExpenses] =useState([]);
     const [error, setError] = useState(null);

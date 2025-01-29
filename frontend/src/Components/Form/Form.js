@@ -8,7 +8,7 @@ import {plus} from "../../utils/Icons";
 
 
 function Form() {
-    const {addIncome} = useGlobalContext()
+    const {addIncome, getIncomes} = useGlobalContext()
     const [inputState, setInputState] = useState({
         title: '',
         amount: '',
@@ -19,13 +19,14 @@ function Form() {
 
     const {title, amount, date, category, description} = inputState;
 
-    const handleInput = name => event => {
-        setInputState({...inputState, [name]: event.target.value})
+    const handleInput = name => e => {
+        setInputState({...inputState, [name]: e.target.value})
     }
 
-    const handleSubmit = event => {
-        event.preventDefault()
+    const handleSubmit = e => {
+        e.preventDefault()
         addIncome(inputState)
+        getIncomes()
     }
 
     return (
@@ -67,7 +68,7 @@ function Form() {
                     <option value="" disabled>Select Option</option>
                     <option value="salary">Salary</option>
                     <option value="sidehustles">Side Hustles</option>
-                    <option value="investiments">Investiments</option>
+                    <option value="investments">Investments</option>
                     <option value="stocks">Stocks</option>
                     <option value="cripto">Cripto</option>
                     <option value="bank">Bank Transfer</option>

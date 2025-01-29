@@ -15,7 +15,7 @@ const IncomeSchema = new mongoose.Schema({
     },
     type: {
         type: String,
-        default: 'income',
+        default: 'income'
     },
     date: {
         type: Date,
