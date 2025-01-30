@@ -46,7 +46,8 @@ export const GlobalProvider = ({ children }) => {
             addIncome,
             getIncomes,
             incomes,
-            deleteIncome
+            deleteIncome,
+            totalIncome
         }}>
             {children}
         </GlobalContext.Provider>
