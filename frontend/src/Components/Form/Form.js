@@ -26,7 +26,14 @@ function Form() {
     const handleSubmit = e => {
         e.preventDefault()
         addIncome(inputState)
-        getIncomes()
+        setInputState({
+                title: '',
+                amount: '',
+                date: '',
+                category: '',
+                description: '',
+            }
+        )
     }
 
     return (
@@ -97,6 +104,7 @@ function Form() {
                     bRad={'30px'}
                     bg={'var(--color-accent'}
                     color={'#fff'}
+                    onClick={handleSubmit}
                 />
             </div>
 
