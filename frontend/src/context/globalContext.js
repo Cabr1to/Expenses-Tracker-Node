@@ -70,7 +70,17 @@ export const GlobalProvider = ({ children }) => {
         return totalIncome;
     }
 
-    console.log(totalIncome())
+    const totalBalance = () => {
+        return totalIncome() - totalExpense();
+    }
+
+    const transactionHistory = () => {
+        const history = [...incomes, ...expenses];
+        history.sort((a, b) => {
+            return new Date(b.createdAt) - new Date(a.createdAt);
+        });
+    }
+
 
     return (
         <GlobalContext.Provider value={{
@@ -83,7 +93,9 @@ export const GlobalProvider = ({ children }) => {
             addExpense,
             getExpenses,
             deleteExpense,
-            totalExpense
+            totalExpense,
+            totalBalance,
+            transactionHistory
         }}>
             {children}
         </GlobalContext.Provider>
