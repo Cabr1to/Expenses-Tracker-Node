@@ -12,9 +12,10 @@ import {
     medical,
     money, piggy,
     stocks, takeaway,
-    trash
+    trash, tv
 } from "../../utils/Icons";
 import Button from "../Button/Button";
+import {dateFormat} from "../../utils/dateFormat";
 
 
 function IncomeItem({
@@ -53,6 +54,8 @@ function IncomeItem({
                 return food;
             case 'health':
                 return medical;
+            case 'subscriptions':
+                return tv;
             case 'clothing':
                 return clothing;
             case 'takeaway':
@@ -73,7 +76,7 @@ function IncomeItem({
                 <div className="inner-content">
                     <div className="text">
                         <p>{dollar} {amount}</p>
-                        <p>{calender} {date}</p>
+                        <p>{calender} {dateFormat(date)}</p>
                         <p>{comment} {description}</p>
                     </div>
                     <div className="btn-con">
