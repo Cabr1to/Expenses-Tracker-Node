@@ -74,7 +74,7 @@ function Dashboard() {
 const DashboardStyled = styled.div`
     .stats-con {
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(6, 1fr);
         gap: 2rem;
         .chart-con{
             grid-column: 1 / 4;
@@ -84,6 +84,7 @@ const DashboardStyled = styled.div`
                 grid-template-columns: repeat(4, 1fr);
                 gap: 2rem;
                 margin-top: 2rem;
+                text-align: center;
                 .income, .expense {
                     grid-column: span 2;
                 }
