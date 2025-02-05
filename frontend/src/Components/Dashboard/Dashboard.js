@@ -4,9 +4,12 @@ import {InnerLayout} from "../../styles/Layouts";
 import Chart from "../Chart/Chart";
 import {useGlobalContext} from "../../context/globalContext";
 import {dollar} from "../../utils/Icons";
+import History from "../History/History";
+
+
 
 function Dashboard() {
-    const {totalExpense, totalIncome, totalBalance, getIncomes, getExpenses} = useGlobalContext()
+    const {totalExpense, incomes, expenses, totalIncome, totalBalance, getIncomes, getExpenses} = useGlobalContext()
 
     useEffect(() => {
         getIncomes()
@@ -41,14 +44,49 @@ function Dashboard() {
                         </div>
                     </div>
                     <div className="history-con">
+                        <History/>
+                        <h2 className="salary-title">Min<span>Salary</span>Max</h2>
+                        <div className="salary-item">
+                            <p>
+                                {Math.min(...incomes.map(item => item.amount))}
+                            </p>
+                            <p>
+                                {Math.max(...incomes.map(item => item.amount))}
+                            </p>
+                        </div>
 
+                        <h2 className="salary-title">Min<span>Expense</span>Max</h2>
+                        <div className="salary-item">
+                            <p>
+                                {Math.min(...expenses.map(item => item.amount))}
+                            </p>
+                            <p>
+                                {Math.max(...expenses.map(item => item.amount))}
+                            </p>
+                        </div>
                     </div>
                 </div>
             </InnerLayout>
         </DashboardStyled>
     )
 }
+
 const DashboardStyled = styled.div`
+    .stats-con {
+        display: flex;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 2rem;
+        .chart-con {
+            grid-column: 1 / 4;
+            height: 400px;
+            .amount-con{
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2rem;
+                margin-top: 2rem;
+            }
+        }
+    }
     
 `;
 
