@@ -79,7 +79,7 @@ export const GlobalProvider = ({ children }) => {
         history.sort((a, b) => {
             return new Date(b.createdAt) - new Date(a.createdAt);
         })
-        return history;
+        return history.slice(0,3);
     }
 
 
@@ -96,7 +96,9 @@ export const GlobalProvider = ({ children }) => {
             deleteExpense,
             totalExpense,
             totalBalance,
-            transactionHistory
+            transactionHistory,
+            error,
+            setError
         }}>
             {children}
         </GlobalContext.Provider>
