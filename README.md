@@ -27,6 +27,8 @@ Aplicação web para gerenciamento de entradas e saídas financeiras, com dashbo
 **Backend:**
 - Node.js
 - Express
+- **MongoDB (banco de dados NoSQL)**
+- **Mongoose (ODM para MongoDB)**
 - API RESTful com endpoints:
   - GET `/get-incomes` - Lista todas as entradas
   - POST `/add-income` - Cria nova entrada
@@ -41,3 +43,46 @@ Aplicação web para gerenciamento de entradas e saídas financeiras, com dashbo
 1. Clone o repositório
 ```bash
 git clone https://github.com/Cabr1to/Expenses-Tracker-Node.git
+```
+2. Instale as dependências (backend e frontend)
+```bash
+cd backend
+npm install
+
+cd ../frontend
+npm install
+```
+
+3. Configure as variáveis de ambiente (crie um arquivo .env no backend com):
+```bash
+MONGODB_URI=sua_string_de_conexao_mongodb
+PORT=3001
+```
+4. Inicie os servidores
+# Backend (Node.js)
+```bash
+cd backend
+npm start
+```
+# Frontend (React)
+```bash
+cd ../frontend
+npm run dev
+```
+
+
+## 🤝 Contribuição
+- Contribuições são bem-vindas! Siga estes passos:
+
+1. Faça um Fork do projeto
+
+2. Crie uma Branch (git checkout -b feature/nova-feature)
+
+3. Commit suas mudanças (git commit -m 'Adiciona nova feature')
+
+4. Push para a Branch (git push origin feature/nova-feature)
+
+5. Abra um Pull Request
+
+
+Desenvolvido com ❤️ por [Cabr1to] - ✉️ [luis.b.c.melo@gmail.com]
