@@ -6,8 +6,7 @@
 
 Aplicação web para gerenciamento de entradas e saídas financeiras, com dashboard interativo para visualização do fluxo de caixa.
 
-![Uploading {C81D4159-44BE-4E38-8C26-52EA736309DA}.png…]()
-<!-- Adicione uma imagem real posteriormente -->
+![Captura de Tela do Dashboard](frontend/src/img/dashboard.png) <!-- Adicione uma imagem real posteriormente -->
 
 ## ✨ Funcionalidades
 
